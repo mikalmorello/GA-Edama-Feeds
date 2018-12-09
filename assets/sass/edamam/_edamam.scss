@@ -8,13 +8,32 @@
 // EDAMAM
 
 .edamam {
-  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  max-width: 100vw;
+  @include breakpoint($tablet) {
+    flex-direction: row;
+    width: 85vw;
+  }
 }
 
 
 // EDAMAM
 
-.edamam--card {
-  background: yellow;
+.edamam__card {
+  background: $white;
   display: flex;
+  flex-direction: column;
+  margin: 0 1.5rem 2rem 1.5rem;
+  max-width: 100%;
+  @include breakpoint($tablet) {
+    margin: 0 0 2rem 0;
+    width: 45%;
+  }
+  @include breakpoint($desktop) {
+    width: 30%;
+  }
 }

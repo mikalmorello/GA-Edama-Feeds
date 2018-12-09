@@ -6,6 +6,7 @@
   <title>Edamam Recipe</title>
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/edamam.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 
 <body> 
@@ -13,16 +14,26 @@
     <h1 class="header__logo">Edamam</h1>
     <section class="section section--search">
       <form class="search">
-        <input id="searchInput" class="search__input">
-        <button id="searchButton" class="search__button">Search</a>
+        <input id="searchInput" class="search__input" placeholder="Enter recipe search">
+        <button id="searchButton" class="search__button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+            <title>Search</title>
+            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </form>
-
-      
     </section>
   </header>
   <main class="main">
-    <section class="section section--infinite-load">
-      <div id="pics"></div>
+    <section id="apiResults" class="section section--infinite-load">
+      <div id="edamam" class="edamam">
+        <!-- RESULTS GO HERE -->
+      </div>
+    </section>
+    <section id="loadMore" class="section section--load-more">
+      <button id="loadButton" class="load-more">
+        Load More
+      </button>
     </section>
   </main>
   <script src="assets/js/main.js"></script>

@@ -1,8 +1,8 @@
 /* SECTION */
 /*
 - SECTION
-- SECTION CHAT FORM
-- SECTION WALL-E
+- SECTION SEARCH
+- SECTION LOAD MORE
 */
 
 
@@ -13,41 +13,28 @@
 }
 
 
-// SECTION CHAT FORM
+// SECTION SEARCH
 
-.section--chat {
-  
-  margin: 0 auto;
-  //min-height: 10rem;
+.section--search {
+  margin: 1.5rem auto;
+  z-index: 2;
 }
 
+// SECTION INFINITE LOAD
 
-// SECTION USER CHAT
-
-.section--user-chat {
-  flex-grow:1;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-  
+.section--infinite-load {
+  padding: 4rem 0 0 0;
 }
+ 
 
+// SECTION LOAD MORE
 
-// SECTION WALL-E CHAT
-
-.section--wall-e-chat {
-  z-index: 0;
-}
-
-
-// SECTION WALL-E
-
-.section--wall-e {
+.section--load-more {
   align-self: flex-end;
+  display: flex;
   margin: 0 auto;
-  max-height: 33.3vh;
-  padding-top: 1.5rem;
+  padding: 2rem;
   overflow: hidden;
-  z-index: 10;
 }
 
 
