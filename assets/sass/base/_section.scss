@@ -9,6 +9,7 @@
 // SECTION
 
 .section {
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -33,9 +34,7 @@
   align-self: flex-end;
   display: flex;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   overflow: hidden;
 }
-
-
 
