@@ -1,0 +1,54 @@
+/* SECTION */
+/*
+- SECTION
+- SECTION CHAT FORM
+- SECTION WALL-E
+*/
+
+
+// SECTION
+
+.section {
+  width: 100%;
+}
+
+
+// SECTION CHAT FORM
+
+.section--chat {
+  
+  margin: 0 auto;
+  //min-height: 10rem;
+}
+
+
+// SECTION USER CHAT
+
+.section--user-chat {
+  flex-grow:1;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  
+}
+
+
+// SECTION WALL-E CHAT
+
+.section--wall-e-chat {
+  z-index: 0;
+}
+
+
+// SECTION WALL-E
+
+.section--wall-e {
+  align-self: flex-end;
+  margin: 0 auto;
+  max-height: 33.3vh;
+  padding-top: 1.5rem;
+  overflow: hidden;
+  z-index: 10;
+}
+
+
+
