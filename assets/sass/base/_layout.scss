@@ -17,6 +17,7 @@
   flex-direction: column;
   min-height: 20vh; 
   position:relative;
+  transition: min-height .25s;  
   &:before {
     background: rgba($black,.3);
     bottom: 0;
@@ -46,8 +47,12 @@
       width: 100%;
     }
   }
+  &--full-screen {
+    height: 100vh; 
+    min-height: 100vh; 
+  }
+  
 }
-
 
 // MAIN
 
@@ -57,5 +62,5 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  min-height: 80vh; 
+  //min-height: 80vh; 
 }

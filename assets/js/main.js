@@ -5,10 +5,12 @@ const xhr = new XMLHttpRequest(),
       baseUrl = 'https://api.edamam.com/search?q=',
       appId ='&app_id=d22ae923',
       appKey ='&app_key=732c0c142c23ebefb242a35d1ff382c3',
+      header = document.getElementById('header'),
       searchInput = document.getElementById('searchInput'),
       searchButton = document.getElementById('searchButton'),
       loadMoreButton = document.getElementById('loadMoreButton'),
-      resultContainer = document.getElementById('edamam');
+      resultContainer = document.getElementById('edamam'),
+      resultCountContainer = document.getElementById('edamam-results');
       
 let searchResultRange = 9;
     searchResultMin = 0,
@@ -36,7 +38,9 @@ function handleSuccess() {
    console.log('is this working');
    resultContainer.innerHTML += `<article class="edamam__card"><img src="${hits[i].recipe.image}">${hits[i].recipe.label}</article>` 
   }
-  
+  loadMoreButton.classList.add('load-more--show');
+  header.classList.remove('header--full-screen');
+  resultCount();
 }
 
 // API Error
@@ -49,6 +53,13 @@ function handleError() {
 function infiniteLoad(currentResults) {
   searchResultMin = currentResults + 1;
   searchResultMax = searchResultMin + searchResultRange;
+}
+
+// Inifnite Load count
+
+function resultCount() {
+  console.log('Result count is ' + searchResultMax);
+  resultCountContainer.innerHTML += `Result count is ${searchResultMax}`;          
 }
 
 // Layout testing
