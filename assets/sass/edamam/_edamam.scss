@@ -37,3 +37,33 @@
     width: 30%;
   }
 }
+	
+.edamam-results {
+  background: $white;
+  border-radius: .4em;
+  display: none;
+  font-family: sans-serif;
+  font-weight: 300;
+  justify-content: space-evenly;
+  margin: 1rem auto 1.5rem auto;
+  max-width: 12rem;
+  padding: .75rem;
+  position: relative;
+  text-align: center;
+  &--show {
+    display: block;
+  }
+  &:after {
+	border: .5rem solid transparent;
+	border-bottom-color: $white;
+	border-top: 0;
+	content: '';
+    height: 0;
+    left: 50%;
+	margin-left: -.5rem;
+	margin-top: -.5rem;
+	position: absolute;
+	top: 0;
+	width: 0; 
+  }
+}
