@@ -65,13 +65,42 @@ function resultCount() {
   resultCountContainer.innerHTML = `Result count is ${searchResultMax}`;          
 }
 
+// Labels
+function labels(labelArray){
+  var labelList = '';
+  labelArray.forEach(function(element) {
+    labelList += '<span class="edamam-card__label">' + element + '</span>'; 
+  });
+  console.log(labelList);
+  return labelList;
+}
+
 // Load Results
 
 function loadResults(response){
   var hits = response.hits;
-  for(let i = 0; i < hits.length; i++) {
-   resultContainer.innerHTML += `<article class="edamam__card"><img src="${hits[i].recipe.image}">${hits[i].recipe.label}</article>` 
+  var count = response.count;
+  if(count === 0){
+    resultContainer.innerHTML = `<div class="error">Sorry no results</div>`;
+    resultCountContainer.classList.remove('edamam-results--show');
+    loadMoreButton.classList.remove('load-more--show');
+  } else {
+    for(let i = 0; i < hits.length; i++) { 
+      resultContainer.innerHTML += 
+       `<article class="edamam-card slideInUp">
+          <div class="edamam-card__media">
+            <img src="${hits[i].recipe.image}">
+          </div>
+          <div class="edamam-card__content">
+            <h2 class="edamam-card__title">${hits[i].recipe.label}</h2>
+            <div class="edamam-card__calories">${hits[i].recipe.calories}</div>
+            <div class="edamam-card__labels">${labels(hits[i].recipe.healthLabels)}</div>
+            <a href="${hits[i].recipe.url}" class="edamam-card__url">Recipe</a>
+          </div>
+        </article>`;
+     }
   }
+
 }
 
 // Reset results
